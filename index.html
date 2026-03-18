@@ -107,7 +107,7 @@
   .title-row {
     display: flex;
     align-items: baseline;
-    gap: 14px;
+    gap: 0;
     margin-bottom: 10px;
   }
 
@@ -426,7 +426,7 @@
       <span class="badge-env">internal · brand33</span>
     </div>
     <div class="title-row">
-      <h1>The <span>Toolkit</span></h1>
+      <h1>The&nbsp;<span>Toolkit</span></h1>
       
     </div>
     <p class="welcome-msg">Every tool and automation, documented in one place.</p>
@@ -517,6 +517,7 @@
       status:    "beta",
       sopUrl:    "https://scribehow.com/page-embed/New_Job_Resource_Creation_Workflow__ccn_DR5oRvy5ynn7u_gwuA",
       launchUrl: "https://cd333.app.n8n.cloud/form/26f02a42-0b9b-437d-ba94-906bbc5adedc",
+      detailUrl: "job-workflow.html",
       tags:      ["Automation", "SharePoint", "Asana", "Ziflow", "Function Point"],
       icon:      "doc",
       iconColor: "green"
@@ -529,6 +530,7 @@
       category:  "agent",
       status:    "live",
       sopUrl:    "",
+      detailUrl: "hr-bot.html",
       launchUrl: "https://teams.microsoft.com/l/chat/19:d0aacc4e-193f-4968-90f3-7f5063291b6b_0f49fb86-706a-46f9-90ae-ad2b9e4818c9@unq.gbl.spaces/conversations?context=%7B%22contextType%22%3A%22chat%22%7D",
       tags:      ["AI Agent"],
       icon:      "bot",
@@ -540,6 +542,8 @@
       category:  "apps",
       status:    "indev",
       sopUrl:    "",
+      detailUrl: "scorecard.html",
+      launchUrl: "https://brandscore-ebon.vercel.app",
       tags:      ["Web App"],
       icon:      "chart",
       iconColor: "purple"
@@ -584,12 +588,13 @@
       const statusClass = { live: "status-live", beta: "status-beta", coming: "status-coming", indev: "status-indev" }[tool.status] || "status-coming";
       const statusLabel = { live: "Live", beta: "Beta", coming: "Coming Soon", indev: "In Dev" }[tool.status] || "Coming Soon";
       const LAUNCH_ICON = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 8h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+      const DETAIL_ICON = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 10l4-4M9 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4H4a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
       const launchHtml = tool.launchUrl
-        ? '<a class="doc-link" href="' + tool.launchUrl + '" target="_blank" style="margin-left:10px;color:#4a9fd4;">' + LAUNCH_ICON + 'Launch</a>'
+        ? '<a class="doc-link" href="' + tool.launchUrl + '" target="_blank" style="color:#4a9fd4;">' + LAUNCH_ICON + 'Launch</a>'
         : '';
-      const sopHtml = tool.sopUrl
-        ? '<a class="doc-link" href="#" onclick="openSOP(\'' + tool.sopUrl + '\', \'' + tool.title + '\'); return false;">' + SOP_ICON + 'View SOP</a>'
-        : '<span class="doc-link" style="opacity:0.3;cursor:default;">' + SOP_ICON + 'SOP pending</span>';
+      const sopHtml = tool.detailUrl
+        ? '<a class="doc-link" href="' + tool.detailUrl + '">' + DETAIL_ICON + 'View Details</a>'
+        : '<span class="doc-link" style="opacity:0.3;cursor:default;">' + DETAIL_ICON + 'View Details</span>';
       const tagsHtml = tool.tags.map(t => '<span class="tag">' + t + '</span>').join("");
       const card = document.createElement("div");
       card.className = "card cat-" + tool.category;
