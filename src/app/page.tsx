@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Radar, IconContainer } from "../components/ui/radar-effect";
 import { EventLog } from "../components/ui/hud/event-log";
 import { BuildInfo } from "../components/ui/hud/build-info";
-import { HyperText } from "../components/ui/hyper-text";
+import { CharacterRain } from "../components/ui/hud/character-rain";
 import { HiCog } from "react-icons/hi";
 import { HiCpuChip } from "react-icons/hi2";
 import { BsGlobe } from "react-icons/bs";
@@ -59,6 +59,9 @@ export default function Home() {
 
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black">
+      {/* Background character rain — canvas layer behind everything */}
+      <CharacterRain />
+
       {/* Boot overlay */}
       <AnimatePresence>
         {!booted && (
@@ -179,46 +182,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Hero title block — sits in the dead zone above the radar */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: booted ? 1 : 0, y: booted ? 0 : 12 }}
-        transition={{ duration: 0.6, delay: 0.35 }}
-        className="pointer-events-none absolute top-[18%] left-1/2 z-30 flex -translate-x-1/2 flex-col items-center text-center"
-      >
-        {/* Top decorative rule */}
-        <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
-          <span className="h-px w-10 bg-white/20" />
-          <span>//</span>
-          <span className="h-px w-10 bg-white/20" />
-        </div>
-
-        {/* Main title — scrambles in using HyperText */}
-        <div className="mt-4">
-          <HyperText
-            text="SIGNAL"
-            duration={1200}
-            animateOnLoad={booted}
-            className="text-5xl font-bold tracking-[0.15em] text-white/90 sm:text-6xl md:text-7xl"
-          />
-        </div>
-
-        {/* Taglines */}
-        <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/50 sm:text-[11px]">
-          operator console for carson dean
-        </div>
-        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30 sm:text-[11px]">
-          automations &middot; agents &middot; web tools
-        </div>
-
-        {/* Bottom decorative rule */}
-        <div className="mt-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/20">
-          <span className="h-px w-6 bg-white/15" />
-          <span className="inline-block h-1 w-1 rounded-full bg-green-400/60" />
-          <span className="h-px w-6 bg-white/15" />
-        </div>
-      </motion.div>
 
       {/* Radar hub */}
       <motion.div
