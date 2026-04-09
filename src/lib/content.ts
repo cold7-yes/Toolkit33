@@ -20,6 +20,8 @@ export interface ProjectFrontmatter {
   runsToDate?: number;
   lastUpdated: string;
   excerpt: string;
+  /** Optional client this project was built for. Omit for personal/internal work. */
+  client?: string;
 }
 
 export interface Project extends ProjectFrontmatter {

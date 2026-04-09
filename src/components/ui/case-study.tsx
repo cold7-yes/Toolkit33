@@ -99,7 +99,7 @@ export function CaseStudy({ project }: CaseStudyProps) {
             back to {project.category}
           </Link>
 
-          <div className="mt-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-widest text-white/60">
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-widest text-white/60">
             <span>{project.id}</span>
             <span className="text-white/30">·</span>
             <span>case study</span>
@@ -107,6 +107,13 @@ export function CaseStudy({ project }: CaseStudyProps) {
               <>
                 <span className="text-white/30">·</span>
                 <span>{project.version}</span>
+              </>
+            )}
+            {project.client && (
+              <>
+                <span className="text-white/30">·</span>
+                <span className="text-white/40">client</span>
+                <span className="text-white/80">{project.client}</span>
               </>
             )}
           </div>

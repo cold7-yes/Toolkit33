@@ -163,8 +163,9 @@ export default function Home() {
                 System Operator
               </div>
               <div className="text-xl font-semibold text-white">{OPERATOR_NAME}</div>
+              {/* Edit this line to your own voice if you want — this is the one human sentence on the site. */}
               <div className="mt-1 text-sm text-white/60">
-                Building internal automations, agents, and web tools for Brand33.
+                Independent engineer. I build automations, agents, and web tools for teams who&apos;d rather not build them in-house.
               </div>
               <div className="mt-5 flex flex-col gap-2">
                 <a
@@ -182,6 +183,48 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Mission brief — headline + key-value rows + prompt, sits in the dead zone above the radar */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: booted ? 1 : 0, y: booted ? 0 : 12 }}
+        transition={{ duration: 0.6, delay: 0.35 }}
+        className="pointer-events-none absolute top-[16%] left-1/2 z-30 flex w-full max-w-xl -translate-x-1/2 flex-col items-center px-6 text-center"
+      >
+        {/* Headline */}
+        <h1 className="font-mono text-[11px] font-semibold uppercase leading-relaxed tracking-[0.18em] text-white/85 sm:text-[13px]">
+          This is not a portfolio. It&apos;s the work, running.
+        </h1>
+
+        {/* Horizontal rule */}
+        <div className="mt-4 h-px w-full max-w-sm bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+        {/* Key-value rows */}
+        <dl className="mt-5 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em] sm:text-[11px]">
+          <dt className="text-right text-white/30">OPERATOR</dt>
+          <dd className="text-left text-white/70">Carson Dean</dd>
+
+          <dt className="text-right text-white/30">SECTORS</dt>
+          <dd className="text-left text-white/70">
+            Automations <span className="text-white/30">·</span> Agents{" "}
+            <span className="text-white/30">·</span> Web Tools
+          </dd>
+
+          <dt className="text-right text-white/30">STATUS</dt>
+          <dd className="flex items-center gap-1.5 text-left text-white/70">
+            <span className="inline-block h-1 w-1 animate-pulse rounded-full bg-green-400" />
+            <span>
+              3 systems detected <span className="text-white/30">·</span> 2 live{" "}
+              <span className="text-white/30">·</span> 1 beta
+            </span>
+          </dd>
+        </dl>
+
+        {/* Prompt */}
+        <div className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-green-400/70 sm:text-[11px]">
+          &gt; select a node on the radar to explore
+        </div>
+      </motion.div>
 
       {/* Radar hub */}
       <motion.div

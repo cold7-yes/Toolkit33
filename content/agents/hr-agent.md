@@ -5,6 +5,7 @@ title: HR Agent
 version: v1.0.0
 status: live
 category: agents
+client: Brand33
 tags: [Microsoft Teams, RAG, SharePoint]
 launchUrl: https://teams.microsoft.com/l/chat/19:d0aacc4e-193f-4968-90f3-7f5063291b6b_0f49fb86-706a-46f9-90ae-ad2b9e4818c9@unq.gbl.spaces/conversations?context=%7B%22contextType%22%3A%22chat%22%7D
 screenshot: /screenshots/hr-agent.png

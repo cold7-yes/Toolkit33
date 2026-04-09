@@ -5,6 +5,7 @@ title: Brand Scorecard
 version: v0.5.0
 status: beta
 category: web-tools
+client: Brand33
 tags: [Next.js, AI scoring, Vercel, insurance]
 launchUrl: https://brandscore-ebon.vercel.app
 screenshot: /screenshots/brand-scorecard.png
