@@ -13,8 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Toolkit",
-  description: "The Toolkit — Internal tools and automations",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: "Signal · Carson Dean",
+  description:
+    "An operator console for the automations, agents, and web tools built by Carson Dean. You're not reading a portfolio \u2014 you're using one.",
+  openGraph: {
+    title: "Signal · Carson Dean",
+    description:
+      "Automations, agents, and web tools built by Carson Dean.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Signal · Carson Dean",
+    description:
+      "Automations, agents, and web tools built by Carson Dean.",
+  },
 };
 
 export default function RootLayout({

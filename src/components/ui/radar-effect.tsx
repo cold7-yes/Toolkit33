@@ -64,11 +64,14 @@ export const IconContainer = ({
   text,
   delay,
   href,
+  pulsing = false,
 }: {
   icon?: React.ReactNode;
   text?: string;
   delay?: number;
   href?: string;
+  /** When true, briefly flashes a green activity halo around the node. */
+  pulsing?: boolean;
 }) => {
   const content = (
     <motion.div
@@ -77,15 +80,34 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-800 shadow-inner transition-colors hover:border-sky-600 hover:bg-slate-700 cursor-pointer">
+      {/* Activity halo — briefly lights up when parent marks this node as pulsing */}
+      <div
+        className={twMerge(
+          "pointer-events-none absolute inset-x-0 -top-2 h-16 rounded-full transition-opacity duration-500",
+          pulsing ? "opacity-100" : "opacity-0"
+        )}
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(74,222,128,0.35) 0%, rgba(74,222,128,0) 60%)",
+          filter: "blur(6px)",
+        }}
+      />
+      <div
+        className={twMerge(
+          "flex h-12 w-12 items-center justify-center rounded-2xl border bg-slate-800 shadow-inner transition-all cursor-pointer",
+          pulsing
+            ? "border-green-400/80 bg-slate-700 shadow-[0_0_20px_rgba(74,222,128,0.4)]"
+            : "border-slate-700 hover:border-sky-600 hover:bg-slate-700"
+        )}
+      >
         {icon || (
           <svg className="h-8 w-8 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
           </svg>
         )}
       </div>
-      <div className="hidden rounded-md px-2 py-1 md:block">
-        <div className="text-center text-xs font-bold text-slate-400">
+      <div className="rounded-md px-2 py-1">
+        <div className="text-center text-[10px] font-bold uppercase tracking-wider text-slate-400 md:text-xs">
           {text || "Web Development"}
         </div>
       </div>
