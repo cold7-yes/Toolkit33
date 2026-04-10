@@ -11,7 +11,7 @@ export function Footer() {
             </svg>
           </div>
           <span className="text-sm font-medium tracking-tight text-neutral-500">
-            CD STUDIO &copy; {new Date().getFullYear()}
+            cd systems &copy; {new Date().getFullYear()}
           </span>
         </div>
         <div className="flex gap-8">

@@ -12,12 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CD Studio — Automation studio for growing brands",
+  title: "CD Systems — Automation studio for growing brands",
   description:
     "We build custom automations and internal tools for CPG founders and operations teams. Less busywork, more brand-building.",
   metadataBase: new URL("https://example.com"),
   openGraph: {
-    title: "CD Studio — Automation studio for growing brands",
+    title: "CD Systems — Automation studio for growing brands",
     description:
       "Custom automations and internal tools for CPG founders and operations teams.",
     type: "website",

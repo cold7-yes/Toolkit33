@@ -61,7 +61,7 @@ export async function generateMetadata({
   if (!cs) return { title: "Case Study Not Found" };
 
   return {
-    title: `${cs.name} — CD Studio`,
+    title: `${cs.name} — CD Systems`,
     description: cs.result,
   };
 }
