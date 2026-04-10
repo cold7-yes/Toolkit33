@@ -1,49 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
-  ),
-  title: "Signal · Carson Dean",
+  title: "Cold Three Three — Automation studio for growing brands",
   description:
-    "An operator console for the automations, agents, and web tools built by Carson Dean. You're not reading a portfolio \u2014 you're using one.",
+    "We build custom automations and internal tools for CPG founders and operations teams. Less busywork, more brand-building.",
+  metadataBase: new URL("https://example.com"),
   openGraph: {
-    title: "Signal · Carson Dean",
+    title: "Cold Three Three — Automation studio for growing brands",
     description:
-      "Automations, agents, and web tools built by Carson Dean.",
+      "Custom automations and internal tools for CPG founders and operations teams.",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Signal · Carson Dean",
-    description:
-      "Automations, agents, and web tools built by Carson Dean.",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

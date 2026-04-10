@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cold Three Three — Automation Studio Site
 
-## Getting Started
+Marketing site for an n8n / automation freelance practice serving CPG founders and small operations teams. Built with Next.js 16, Tailwind v4, and Sanity (CMS).
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** — App Router, Server Components, ISR with tag revalidation
+- **Tailwind CSS v4** — design tokens via `@theme`
+- **Sanity CMS v5** — content managed at `/studio` (embedded)
+- **Vercel** — deployment + env vars
+
+## Local development
 
 ```bash
+npm install
+cp .env.example .env.local   # then fill in real values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000. The CMS lives at http://localhost:3000/studio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How content updates flow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Edit a project in Sanity Studio (`/studio`)
+2. Sanity calls `POST /api/revalidate?secret=…` (configured as a webhook)
+3. The route handler calls `revalidateTag("projects", { expire: 0 })`
+4. The next visit to the homepage rebuilds the showcase from fresh data
 
-## Learn More
+No full Vercel redeploy is required for content changes.
 
-To learn more about Next.js, take a look at the following resources:
+## First-time setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [`SETUP.md`](./SETUP.md) for the step-by-step walkthrough (creating a Sanity account, setting Vercel env vars, configuring the webhook).
