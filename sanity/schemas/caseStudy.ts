@@ -74,6 +74,12 @@ export const caseStudy = defineType({
       initialValue: "live",
     }),
     defineField({
+      name: "timeSaved",
+      title: "Time saved per week",
+      type: "string",
+      description: "e.g. '15+ hours/week', '5 hrs → 30 min'",
+    }),
+    defineField({
       name: "thumbnail",
       title: "Thumbnail (card image)",
       type: "image",

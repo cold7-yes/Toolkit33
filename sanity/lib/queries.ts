@@ -27,6 +27,7 @@ export const caseStudyBySlugQuery = groq`
     problem,
     whatWasBuilt,
     toolsUsed,
+    timeSaved,
     status,
     thumbnail,
     gallery[] {
@@ -59,6 +60,7 @@ export interface CaseStudy {
   problem?: string;
   whatWasBuilt?: string;
   toolsUsed?: string[];
+  timeSaved?: string;
   status?: CaseStudyStatus;
   thumbnail?: {
     asset?: { _ref: string };

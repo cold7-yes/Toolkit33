@@ -216,6 +216,15 @@ export default async function CaseStudyPage({
                 borderColor: "rgba(38,38,38,1)",
               }}
             >
+              {cs.timeSaved && (
+                <div className="mb-6">
+                  <h3 className="mb-1 text-xs font-medium uppercase tracking-[0.15em] text-neutral-500">
+                    Time Saved
+                  </h3>
+                  <p className="text-lg font-medium text-green-400">{cs.timeSaved}</p>
+                </div>
+              )}
+
               {cs.clientName && (
                 <div className="mb-6">
                   <h3 className="mb-1 text-xs font-medium uppercase tracking-[0.15em] text-neutral-500">
