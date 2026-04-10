@@ -16,7 +16,7 @@ export function Hero() {
           <span className="text-neutral-500">More growth.</span>
         </h1>
         <p className="mx-auto mb-12 max-w-3xl text-lg font-light leading-relaxed text-neutral-400 sm:text-2xl">
-          We architect intelligent workflows and AI agents that eliminate the manual work holding your growth back.
+          We build custom automation systems that eliminate the manual work costing your business time, money, and momentum.
         </p>
         <a
           href="#work"
