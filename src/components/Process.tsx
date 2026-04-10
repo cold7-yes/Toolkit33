@@ -19,7 +19,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Every system connected.",
-    desc: "CRMs, accounting software, project management tools, email, custom APIs \u2014 we build the integrations that move data between your systems automatically. No more copy-pasting between tabs or waiting on someone to update a spreadsheet.",
+    desc: "CRMs, accounting software, project management tools, email, custom APIs. We build the integrations that move data between your systems automatically. No more copy-pasting between tabs or waiting on someone to update a spreadsheet.",
   },
   {
     icon: (
