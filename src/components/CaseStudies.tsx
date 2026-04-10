@@ -15,7 +15,7 @@ export function CaseStudies({ caseStudies }: Props) {
               Featured Workflows
             </h2>
             <p className="max-w-md text-base text-neutral-400">
-              A collection of production-ready automations integrating AI agents, CRMs, and custom webhooks.
+              A collection of production-ready automations integrating AI agents, APIs, CRMs, and custom webhooks.
             </p>
           </div>
         </div>

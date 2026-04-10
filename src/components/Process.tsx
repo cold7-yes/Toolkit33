@@ -7,8 +7,8 @@ const FEATURES = [
         <path d="M6 21V9a9 9 0 0 0 9 9" />
       </svg>
     ),
-    title: "Handles the hard stuff",
-    desc: "Most automation tools break the moment logic gets complex. We build workflows with conditional branching, loops, and real error handling so edge cases don\u2019t become your problem.",
+    title: "Complex logic, handled.",
+    desc: "Most automation tools break the moment things get complex. We write custom JavaScript and Python inside our workflows to handle conditional branching, loops, and real error handling so edge cases don\u2019t become your problem.",
   },
   {
     icon: (
@@ -18,8 +18,8 @@ const FEATURES = [
         <path d="M3 12a9 3 0 0 0 18 0" />
       </svg>
     ),
-    title: "Data that arrives ready to use",
-    desc: "Every system speaks a different language. We write the transformation logic that cleans, reformats, and structures your data so it lands exactly where it needs to in exactly the right shape.",
+    title: "Data that arrives ready to use.",
+    desc: "Every system speaks a different language. We write transformation logic in JavaScript and Python that cleans, reformats, and structures your data so it lands exactly where it needs to in exactly the right shape.",
   },
   {
     icon: (
