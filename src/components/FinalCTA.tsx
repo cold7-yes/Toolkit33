@@ -5,10 +5,10 @@ export function FinalCTA() {
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-6 text-4xl font-medium tracking-tight text-white sm:text-5xl">
-          Ready to get time back?
+          Less admin. More growth.
         </h2>
         <p className="mb-12 text-xl text-neutral-400">
-          Book a free 30-minute call. We&rsquo;ll map out exactly where you&rsquo;re losing time and what it would take to get it back.
+          Book a free 30-minute call. We&rsquo;ll map out what to automate first.
         </p>
 
         <div

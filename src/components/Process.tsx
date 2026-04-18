@@ -7,8 +7,8 @@ const FEATURES = [
         <path d="M6 21V9a9 9 0 0 0 9 9" />
       </svg>
     ),
-    title: "Complex logic, handled.",
-    desc: "Client work isn't linear. Revision cycles, approval gates, multi-client routing. We handle the edge cases that off-the-shelf tools trip over.",
+    title: "Built for how agencies actually work.",
+    desc: "Revision cycles, approval gates, multi-client routing. We handle the edge cases that off-the-shelf tools trip over.",
   },
   {
     icon: (
@@ -18,8 +18,8 @@ const FEATURES = [
         <path d="M3 12a9 3 0 0 0 18 0" />
       </svg>
     ),
-    title: "Every system connected.",
-    desc: "HubSpot, Asana, Notion, Monday, Google Drive, Slack, Figma. We build the integrations that keep work moving without anyone chasing an update or copy-pasting between tabs.",
+    title: "Every tool you use, connected.",
+    desc: "HubSpot, Asana, Notion, Monday, Figma, Slack. Data moves automatically. No chasing updates, no copy-pasting between tabs.",
   },
   {
     icon: (
@@ -41,9 +41,9 @@ export function Process() {
           {/* Left — features */}
           <div>
             <h2 className="mb-8 text-4xl font-medium leading-snug tracking-tight text-white">
-              Built to run.
+              Build more.
               <br />
-              Built to last.
+              Manage less.
             </h2>
             <div className="flex flex-col gap-10">
               {FEATURES.map((f) => (

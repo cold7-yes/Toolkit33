@@ -11,12 +11,12 @@ export function Hero() {
           Now taking on new clients
         </div>
         <h1 className="mb-8 text-5xl font-medium leading-[1.1] tracking-tight text-white sm:text-7xl lg:text-8xl">
-          Less time on admin.{" "}
+          Stop running your agency.{" "}
           <br className="hidden sm:block" />
-          <span className="text-neutral-500">More time on what grows the business.</span>
+          <span className="text-neutral-500">Start growing it.</span>
         </h1>
         <p className="mx-auto mb-12 max-w-3xl text-lg font-light leading-relaxed text-neutral-400 sm:text-2xl">
-          Custom automations, built end-to-end for growing creative agencies.
+          We automate the manual work so your team can take on more clients, deliver faster, and scale without hiring.
         </p>
         <a
           href="#work"
